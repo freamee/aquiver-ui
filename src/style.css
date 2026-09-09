@@ -1,0 +1,11 @@
+@import "./assets/fonts/fonts.css";
+
+body,
+html,
+* {
+    font-family: 'Chalet Comprime CologneSixty';
+}
+
+body {
+    background-color: grey;
+}
