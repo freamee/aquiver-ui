@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <ElementGeometricBackground />
+    <!-- <ElementGeometricBackground />
 
     <ElementContainer>
 
@@ -35,7 +35,7 @@
       </ElementText>
     </ElementChip>
 
-    <ElementCheckbox />
+    <ElementCheckbox /> -->
   </div>
 </template>
 

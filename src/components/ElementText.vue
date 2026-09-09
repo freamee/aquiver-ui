@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 interface iProps {
-    size: number;
+    size?: number;
 }
 
 withDefaults(defineProps<iProps>(), {
