@@ -1,13 +1,19 @@
 <template>
-    <ElementContainer class="container" :class="{ centered, active, disabled }" v-bind="$props" v-slot="{
-        isHovered
-    }" :theme="disabled ? 'dark' : 'dark-lighten'">
-        <slot :isHovered :isActive="active" />
-    </ElementContainer>
+    <ElementHover v-slot="{ isHovered }">
+        <ElementContainer class="container" :class="{
+            centered,
+            active,
+            disabled
+        }" v-bind="$props" :theme="isHovered ? 'dark-1' : 'dark'">
+            <slot :isHovered :isActive="active" />
+        </ElementContainer>
+    </ElementHover>
+
 </template>
 
 <script setup lang="ts">
 import ElementContainer from './ElementContainer.vue';
+import ElementHover from './ElementHover.vue';
 
 interface iProps {
     name?: string;
@@ -27,19 +33,11 @@ withDefaults(defineProps<iProps>(), {
 .container {
     flex-direction: row;
     align-items: center;
-    padding: 0.4vw 0.5vw;
     gap: 0.25vw;
 
     &.centered {
         justify-content: center;
     }
 
-    &:not(&.disabled) {
-
-        &.active,
-        &:hover {
-            background-color: red !important;
-        }
-    }
 }
 </style>

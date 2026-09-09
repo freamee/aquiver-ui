@@ -1,5 +1,5 @@
 <template>
-    <ElementContainer :theme="focused ? 'dark-lighten-2' : 'dark-lighten'" class="container" :class="{ centered }">
+    <ElementContainer :theme="focused ? 'dark-1' : 'dark'" class="container" :class="{ centered }">
         <slot name="prepend" />
 
         <ElementIcon v-if="prependIcon" :icon="prependIcon" />
@@ -67,7 +67,6 @@ const emit = defineEmits<{
     position: relative;
     flex-direction: row;
     align-items: center;
-    padding: 0.5vw;
     gap: 0.5vw;
     align-self: stretch;
 

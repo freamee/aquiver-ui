@@ -4,8 +4,15 @@ body,
 html,
 * {
     font-family: 'Chalet Comprime CologneSixty';
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-body {
+body,
+html {
+    margin: 0;
+    padding: 0;
     background-color: grey;
 }

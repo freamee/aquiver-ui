@@ -1,30 +1,41 @@
 <template>
   <div>
+
+    <ElementGeometricBackground />
+
     <ElementContainer>
+
       <ElementText>
-        TESZT
+        YOUR RANCH
       </ElementText>
 
-      <ElementButton>
-        <ElementText>CLICK HERE TO ENTER</ElementText>
-      </ElementButton>
+      <ElementText :size=".65">
+        Please review your ranch here.
+      </ElementText>
 
-
-      <ElementSegmented :segments="2" :percentage="50" />
-
-      <ElementInput placeholder="Please enter your name." v-model="text" />
-
-      <ElementChip>
-        <ElementText>
-          ELEMENT_CHIP
-        </ElementText>
-      </ElementChip>
-      <ElementChip>
-        <ElementText>
-          $2,000
-        </ElementText>
-      </ElementChip>
     </ElementContainer>
+
+    <ElementSegmented :segments="2" :percentage="50" />
+
+    <ElementButton>
+      <ElementText>CLICK HERE TO ENTER</ElementText>
+    </ElementButton>
+
+    <ElementInput placeholder="Please enter your name." v-model="text" />
+
+    <ElementChip>
+      <ElementText>
+        ELEMENT_CHIP
+      </ElementText>
+    </ElementChip>
+
+    <ElementChip>
+      <ElementText>
+        $2,000
+      </ElementText>
+    </ElementChip>
+
+    <ElementCheckbox />
   </div>
 </template>
 
@@ -36,6 +47,8 @@ import ElementInput from './components/ElementInput.vue';
 import ElementSegmented from './components/ElementSegmented.vue';
 import ElementText from './components/ElementText.vue';
 import ElementChip from './components/ElementChip.vue';
+import ElementCheckbox from './components/ElementCheckbox.vue';
+import ElementGeometricBackground from './components/ElementGeometricBackground.vue';
 
 
 const text = ref("")
