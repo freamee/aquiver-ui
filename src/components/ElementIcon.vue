@@ -3,26 +3,29 @@
 </template>
 
 <script lang="ts" setup>
-import { type StyleValue, computed } from 'vue';
+import { color, type Color } from "chroma.ts";
+import { type StyleValue, computed } from "vue";
 
 interface iProps {
     size?: number;
     icon: string;
     center?: boolean;
     fixed?: boolean;
+    color?: Color;
 }
 
 const props = withDefaults(defineProps<iProps>(), {
-    size: 0.65,
+    size: 1.0,
     center: true,
-    fixed: true
+    fixed: true,
+    color: color("whitesmoke"),
 });
 
 const styles = computed<StyleValue>(() => {
     return {
-        fontSize: props.size + 'vw',
-        textAlign: props.center ? 'center' : 'left',
-        color: 'white'
+        fontSize: props.size + "vw",
+        textAlign: props.center ? "center" : "left",
+        color: props.color.toString(),
     };
 });
 </script>

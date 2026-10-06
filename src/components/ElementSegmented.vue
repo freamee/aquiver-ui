@@ -1,22 +1,33 @@
 <template>
-    <div class="element-segmented" :class="{
-        'no-transition': !transition
-    }" :style="{
-        transform: `skew(${skewX}deg)`
-    }">
-        <div v-for="(_, index) in segments" :key="index" class="element-segmented-segment">
-            <div class="element-segmented-segment-fill" :style="{
-                width: fillPercentage(index) + '%',
-                background: fillColor.toString(),
-                borderRadius: borderRadius + 'vw',
-                height: barHeight + 'vw'
-            }"></div>
+    <div
+        class="element-segmented"
+        :class="{
+            'no-transition': !transition,
+        }"
+        :style="{
+            transform: `skew(${skewX}deg)`,
+        }"
+    >
+        <div
+            v-for="(_, index) in segments"
+            :key="index"
+            class="element-segmented-segment"
+        >
+            <div
+                class="element-segmented-segment-fill"
+                :style="{
+                    width: fillPercentage(index) + '%',
+                    background: fillColor.toString(),
+                    borderRadius: borderRadius + 'vw',
+                    height: barHeight + 'vw',
+                }"
+            ></div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import * as chroma from 'chroma.ts';
+import * as chroma from "chroma.ts";
 
 interface iProps {
     percentage: number;
@@ -33,14 +44,14 @@ const props = withDefaults(defineProps<iProps>(), {
     borderRadius: 0.15,
     skewX: -15,
     barHeight: 0.5,
-    transition: false
+    transition: false,
 });
 
 function fillPercentage(index: number) {
     const segmentPercentage = 100 / props.segments;
     const actualFill = Math.min(
         Math.max(props.percentage - index * segmentPercentage, 0),
-        segmentPercentage
+        segmentPercentage,
     );
     return (actualFill / segmentPercentage) * 100;
 }

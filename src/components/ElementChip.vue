@@ -5,19 +5,22 @@
 </template>
 
 <script setup lang="ts">
-import type { StyleValue } from 'vue';
+import type { StyleValue } from "vue";
 import * as chroma from "chroma.ts";
 
 interface iProps {
-    bgColor?: chroma.Color;
+    color?: chroma.Color;
+    rounded?: number;
 }
 
 const props = withDefaults(defineProps<iProps>(), {
-    bgColor: () => chroma.color('red'),
+    color: () => chroma.color("red"),
+    rounded: 0,
 });
 
 const style: StyleValue = {
-    background: props.bgColor.toString()
+    background: props.color.toString(),
+    borderRadius: props.rounded + "vw",
 };
 </script>
 
