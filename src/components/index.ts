@@ -1,10 +1,14 @@
+export { default as ElementBarChart } from "./ElementBarChart.vue";
 export { default as ElementButton } from "./ElementButton.vue";
 export { default as ElementCheckbox } from "./ElementCheckbox.vue";
 export { default as ElementChip } from "./ElementChip.vue";
 export { default as ElementContainer } from "./ElementContainer.vue";
+export { default as ElementDivider } from "./ElementDivider.vue";
 export { default as ElementGeometricBackground } from "./ElementGeometricBackground.vue";
 export { default as ElementHover } from "./ElementHover.vue";
 export { default as ElementIcon } from "./ElementIcon.vue";
 export { default as ElementInput } from "./ElementInput.vue";
+export { default as ElementMetric } from "./ElementMetric.vue";
 export { default as ElementSegmented } from "./ElementSegmented.vue";
 export { default as ElementText } from "./ElementText.vue";
+export { default as ElementImage } from "./ElementImage.vue";
