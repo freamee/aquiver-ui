@@ -1,10 +1,8 @@
-import { onMounted, onUnmounted } from "vue";
-
 type NuiEventHandler<T = unknown> = (data: T) => void;
 
 export function useEvent<T = unknown>(
     eventName: string,
-    handler: NuiEventHandler<T>
+    handler: NuiEventHandler<T>,
 ) {
     const eventHandler = (event: MessageEvent) => {
         const { action, data } = event.data ?? {};
@@ -16,11 +14,5 @@ export function useEvent<T = unknown>(
         handler(data);
     };
 
-    onMounted(() => {
-        window.addEventListener("message", eventHandler);
-    });
-
-    onUnmounted(() => {
-        window.removeEventListener("message", eventHandler);
-    });
+    window.addEventListener("message", eventHandler);
 }
