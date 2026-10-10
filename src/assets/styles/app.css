@@ -1,9 +1,7 @@
-@import "./assets/fonts/fonts.css";
-
 body,
 html,
 * {
-    font-family: 'Chalet Comprime CologneSixty';
+    font-family: "Rajdhani";
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -14,5 +12,4 @@ body,
 html {
     margin: 0;
     padding: 0;
-    background-color: grey;
 }
