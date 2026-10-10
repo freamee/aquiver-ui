@@ -11,7 +11,7 @@ export function useEvent<T = unknown>(
             return;
         }
 
-        handler(data);
+        handler(...data);
     };
 
     window.addEventListener("message", eventHandler);
